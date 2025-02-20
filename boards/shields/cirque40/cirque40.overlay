@@ -7,17 +7,17 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
-// for info on pinout documentation errors: https://discord.com/channels/719497620560543766/763848253996793856/1336569619808256053
-
 &pinctrl {
     /* configuration for spi1 device, default state */
     spi1_default: spi1_default {
         /* node name is arbitrary */
         group1 {
-            /* main role: configure P0.11 as SPI clock, P0.22 as SPI MOSI, P0.08 as SPI MISO */
-            psels = <NRF_PSEL(SPIM_SCK,  0, 11)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 22)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 8)>;
+            /* main role: For nice!nano, configure P0.11 as SPI clock, P0.22 as SPI MOSI, P0.08 as SPI MISO 
+                           For Xiao NRF, configure P1.13 as SPI Clock, P1.15 as SPI MOSI, P1.14 as SPI MISO
+            */
+            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
+                    <NRF_PSEL(SPIM_MOSI, 1, 15)>,
+                    <NRF_PSEL(SPIM_MISO, 1, 14)>;
         };
     };
 
@@ -25,9 +25,9 @@
     spi1_sleep: spi1_sleep {
         group1 {
             /* main role: configure P0.11 as SPI clock, P0.22 as SPI MOSI, P0.08 as SPI MISO */
-            psels = <NRF_PSEL(SPIM_SCK, 0, 11)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 22)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 8)>;
+            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
+                    <NRF_PSEL(SPIM_MOSI, 1, 15)>,
+                    <NRF_PSEL(SPIM_MISO, 1, 14)>;
             low-power-enable;
         };
     };
@@ -36,14 +36,14 @@
 
 &xiao_spi {
     status = "okay";
-    cs-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio0 05 GPIO_ACTIVE_LOW>;
 
     glidepoint: glidepoint@0 {
         compatible = "cirque,pinnacle";
         reg = <0>;
         spi-max-frequency = <1000000>;
         status = "okay";
-        dr-gpios = <&gpio0 02 (GPIO_ACTIVE_HIGH)>;
+        dr-gpios = <&gpio0 04 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "1x";
         sleep;
