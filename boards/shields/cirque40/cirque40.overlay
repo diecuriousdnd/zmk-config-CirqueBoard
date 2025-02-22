@@ -13,11 +13,11 @@
         /* node name is arbitrary */
         group1 {
             /* main role: For nice!nano, configure P0.11 as SPI clock, P0.22 as SPI MOSI, P0.08 as SPI MISO 
-                           For Xiao NRF, configure P1.13 as SPI Clock, P1.15 as SPI MOSI, P1.14 as SPI MISO
+                           For Xiao NRF, default pins are: P1.13 as SPI Clock, P1.15 as SPI MOSI, P1.14 as SPI MISO
             */
             psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 1, 15)>,
-                    <NRF_PSEL(SPIM_MISO, 1, 14)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 04)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 05)>;
         };
     };
 
@@ -26,8 +26,8 @@
         group1 {
             /* main role: configure P0.11 as SPI clock, P0.22 as SPI MOSI, P0.08 as SPI MISO */
             psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 1, 15)>,
-                    <NRF_PSEL(SPIM_MISO, 1, 14)>;
+                    <NRF_PSEL(SPIM_MOSI, 0, 04)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 05)>;
             low-power-enable;
         };
     };
@@ -65,28 +65,26 @@
         wakeup-source;
 
         col-gpios
-            = <&gpio1  4 GPIO_ACTIVE_HIGH>  // column 0
-            , <&gpio1  6 GPIO_ACTIVE_HIGH>  // column 1
-            , <&gpio0 31 GPIO_ACTIVE_HIGH>  // column 2
+            = <&gpio0 02 GPIO_ACTIVE_HIGH>  // column 0
+            , <&gpio0 03 GPIO_ACTIVE_HIGH>  // column 1
+            , <&gpio0 28 GPIO_ACTIVE_HIGH>  // column 2
             , <&gpio0 29 GPIO_ACTIVE_HIGH>  // column 3
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>  // column 4
-            , <&gpio0 20 GPIO_ACTIVE_HIGH>  // column 5
-
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>  // column 4
+            
 // I mirrored the arrangement for the future possibility of pcb's for each half being flipped
 
-            , <&gpio1 00 GPIO_ACTIVE_HIGH>  // column 11
-            , <&gpio1 00 GPIO_ACTIVE_HIGH>  // column 10
-            , <&gpio1 00 GPIO_ACTIVE_HIGH>  // column 9
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>  // column 8
-            , <&gpio0 24 GPIO_ACTIVE_HIGH>  // column 7
-            , <&gpio0  9 GPIO_ACTIVE_HIGH>  // column 6
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>  // column 9
+            , <&gpio1 14 GPIO_ACTIVE_HIGH>  // column 8
+            , <&gpio1 12 GPIO_ACTIVE_HIGH>  // column 7 
+            , <&gpio1 03 GPIO_ACTIVE_HIGH>  // column 6
+            , <&gpio1 05 GPIO_ACTIVE_HIGH>  // column 5
             ;             
 
         row-gpios
-            = <&gpio1  1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 0
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 1
-            , <&gpio1  2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 2
-            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 3
+            = <&gpio1 07 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 0
+            , <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 1
+            , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 2
+            , <&gpio1 01 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 3
             ;
     };
 };
