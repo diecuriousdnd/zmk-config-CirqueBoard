@@ -39,7 +39,7 @@
    }; // end cirque listener group
 
 // Mouse Scroll Value
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 
 
