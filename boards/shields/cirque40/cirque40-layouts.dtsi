@@ -3,7 +3,7 @@
 / {
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
-        display-name = "default_transform";
+        display-name = "Cirque40_transform";
 
         kscan = <&kscan0>;
         transform = <&matrix_transform0>;
@@ -44,4 +44,17 @@
             , <&key_physical_attrs 100 100  900  300       0     0     0>
             , <&key_physical_attrs 100 100 1000  300       0     0     0>
             ;
+    };
+};
+#include <physical_layouts.dtsi>
+
+/ {
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "default_transform";
+
+        kscan = <&kscan0>;
+        transform = <&matrix_transform0>;
+
+
     };
