@@ -3,9 +3,9 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/pointing.h>
-
-// #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400  // default: 600
-// #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+// Mouse & scroll sensitivity
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 2400  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 &pinctrl {
     /* configuration for spi1 device, default state */
