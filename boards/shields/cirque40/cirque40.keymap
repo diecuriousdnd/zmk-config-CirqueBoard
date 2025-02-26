@@ -1,5 +1,5 @@
  /*
- * Copyright (c) 2024 idesignstuff
+ * Copyright (c) 2025 idesignstuff
  *
  * SPDX-License-Identifier: MIT
  */
@@ -37,12 +37,6 @@
     }; // end scroller
 */
    }; // end cirque listener group
-
-// Mouse Scroll Value
-// #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-
-
-
 
 / {
     behaviors {
