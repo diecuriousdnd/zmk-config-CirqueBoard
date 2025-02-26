@@ -1,16 +1,12 @@
+// Needed if and only if keys property is used
 #include <physical_layouts.dtsi>
 
 / {
-    physical_layout0: physical_layout_0 {
+    default_layout: default_layout {
         compatible = "zmk,physical-layout";
-        
+        display-name = "Default Layout";
+        transform = <&default_transform>;
         kscan = <&kscan0>;
-        transform = <&matrix_transform0>;
-    
-
-    no_pinkies_transform: no_pinkies_transform {
-        compatible = "zmk,physical-layout";
-        display-name = "no pinkies transform";
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100  200    0       0     0     0>
@@ -50,12 +46,4 @@
             ;
     };
 
-    position_map {
-        compatible = "zmk,physical-layout-position-map";
-
-        no_pinkies_transform {
-            physical-layout = <&no_pinkies_transform>;
-            positions = <>;
-        };
-    };
 };
