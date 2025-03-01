@@ -1,3 +1,5 @@
+// This is a branched file to change the pinout for a Xiao BLE instead of a Xiao BLE plus
+
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "cirque40-layouts.dtsi"
 #include <dt-bindings/zmk/input_transform.h>
@@ -37,14 +39,14 @@
 
 &xiao_spi {
     status = "okay";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>; // between D3 & D4
+    cs-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>; // D6
 
     glidepoint: glidepoint@0 {
         compatible = "cirque,pinnacle";
         reg = <0>;
         spi-max-frequency = <1000000>;
         status = "okay";
-        dr-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH)>; // between D4 & D5
+        dr-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH)>; // D3
 
         sensitivity = "1x";
         sleep;
