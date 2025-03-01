@@ -28,3 +28,7 @@ include:
     #    shield: void16
   - board: seeeduino_xiao_ble
     shield: settings_reset
+    
+  - board: seeeduino_xiao_ble
+    shield: cirque40
+    snippet: zmk-usb-logging
