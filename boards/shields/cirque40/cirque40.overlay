@@ -6,8 +6,8 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/pointing.h>
 // Mouse & scroll sensitivity
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 2400  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+// #define ZMK_POINTING_DEFAULT_MOVE_VAL 2400  // default: 600
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 &pinctrl {
     /* configuration for spi1 device, default state */
@@ -68,27 +68,27 @@
         wakeup-source;
 
         col-gpios
-            = <&gpio0 02 GPIO_ACTIVE_HIGH>  // column 0 > D0
-            , <&gpio0 03 GPIO_ACTIVE_HIGH>  // column 1 > D1
+            = <&gpio0 2  GPIO_ACTIVE_HIGH>  // column 0 > D0
+            , <&gpio0 3  GPIO_ACTIVE_HIGH>  // column 1 > D1
             , <&gpio0 28 GPIO_ACTIVE_HIGH>  // column 2 > D2
             , <&gpio0 15 GPIO_ACTIVE_HIGH>  // column 3 > Between D0 & D1
-            , <&gpio0 09 GPIO_ACTIVE_HIGH>  // column 4 > Between D3 & D4
+            , <&gpio0 9  GPIO_ACTIVE_HIGH>  // column 4 > Between D3 & D4
             
 // I mirrored the arrangement for the future possibility of pcb's for each half being flipped
 
 
-            , <&gpio1 03 GPIO_ACTIVE_HIGH>  // > Between D10 & D9
-            , <&gpio1 05 GPIO_ACTIVE_HIGH>  // > Between D9 & D8
+            , <&gpio1 3  GPIO_ACTIVE_HIGH>  // > Between D10 & D9
+            , <&gpio1 5  GPIO_ACTIVE_HIGH>  // > Between D9 & D8
             , <&gpio0 15 GPIO_ACTIVE_HIGH>  // > Between D0 & D1
             , <&gpio0 19 GPIO_ACTIVE_HIGH>  // > Between D1 & D2
-            , <&gpio1 01 GPIO_ACTIVE_HIGH>  // > Between D2 & D3
+            , <&gpio1 1  GPIO_ACTIVE_HIGH>  // > Between D2 & D3
             ;             
 
         row-gpios
             = <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D10
             , <&gpio1 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D9
             , <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D7 
-            , <&gpio1 07 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > Between D8 & D7
+            , <&gpio1 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > Between D8 & D7
             ;
     };
 };
