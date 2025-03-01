@@ -19,8 +19,8 @@
                            For Xiao NRF, default pins are: P1.13 as SPI Clock, P1.15 as SPI MOSI, P1.14 as SPI MISO
             */
             psels = <NRF_PSEL(SPIM_SCK,  1, 13)>, // D8 (SPIM_SCK,  0, 15) between D4 & D5 would be a high speed alternate pin for the xiao plus
-                    <NRF_PSEL(SPIM_MOSI, 0, 04)>, // D4
-                    <NRF_PSEL(SPIM_MISO, 0, 05)>; // D5
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>, // D4
+                    <NRF_PSEL(SPIM_MISO, 0, 5)>; // D5
         };
     };
 
@@ -29,8 +29,8 @@
         group1 {
             /* main role: configure P0.11 as SPI clock, P0.22 as SPI MOSI, P0.08 as SPI MISO */
             psels = <NRF_PSEL(SPIM_SCK,  1, 13)>, //D8
-                    <NRF_PSEL(SPIM_MOSI, 0, 04)>, //D4
-                    <NRF_PSEL(SPIM_MISO, 0, 05)>; //D5
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>, //D4
+                    <NRF_PSEL(SPIM_MISO, 0, 5)>; //D5
             low-power-enable;
         };
     };
