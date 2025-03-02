@@ -44,7 +44,7 @@
         reg = <0>;
         spi-max-frequency = <1000000>;
         status = "okay";
-        dr-gpios = <&gpio1 13 (GPIO_ACTIVE_HIGH)>; // D8
+        dr-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH)>; // D3
 
         sensitivity = "1x";
         sleep;
@@ -69,7 +69,7 @@
             = <&gpio0  2 GPIO_ACTIVE_HIGH>  // column 0 > D0
             , <&gpio0  3 GPIO_ACTIVE_HIGH>  // column 1 > D1
             , <&gpio0 28 GPIO_ACTIVE_HIGH>  // column 2 > D2
-            , <&gpio0 29 GPIO_ACTIVE_HIGH>  // column 3 > D3
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>  // column 3 > D8
             , <&gpio1 11 GPIO_ACTIVE_HIGH>  // column 4 > D6
             
 // I mirrored the arrangement for the future possibility of pcb's for each half being flipped
