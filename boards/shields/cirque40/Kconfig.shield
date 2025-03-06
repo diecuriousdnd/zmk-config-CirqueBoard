@@ -1,3 +1,3 @@
 # No whitespace after the comma or in your keyboard name!
-config SHIELD_CIRQUE40
-    def_bool $(shields_list_contains,cirque40)
+config SHIELD_VOID16
+    def_bool $(shields_list_contains,void16)
