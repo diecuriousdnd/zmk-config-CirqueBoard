@@ -12,17 +12,17 @@
         wakeup-source;
 
         col-gpios
-            = <&gpio0 2  GPIO_ACTIVE_HIGH>  // column 0 > D0
-            , <&gpio0 3  GPIO_ACTIVE_HIGH>  // column 1 > D1
-            , <&gpio0 28 GPIO_ACTIVE_HIGH>  // column 2 > D2
-            , <&gpio0 29 GPIO_ACTIVE_HIGH>  // column 3 > D3
+            = <&gpio1 12 GPIO_ACTIVE_HIGH>  // column 0 > D7
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>  // column 1 > D8
+            , <&gpio1 14 GPIO_ACTIVE_HIGH>  // column 2 > D9
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>  // column 3 > D10
             ;             
 
         row-gpios
-            = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D4
-            , <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D5
+            = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D3
+            , <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D4
+            , <&gpio0 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D5
             , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D6
-            , <&gpio1 12  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  //  > D7
             ;
     };
 };
@@ -34,7 +34,7 @@
 */
 
 / {
-    matrix_transform0: matrix_transform0 {
+    matrix_transform0: matrix_transform0 {1
         compatible = "zmk,matrix-transform";
         columns = <4>;
         rows = <4>;
