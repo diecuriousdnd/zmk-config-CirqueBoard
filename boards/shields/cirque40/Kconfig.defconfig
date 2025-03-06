@@ -1,8 +1,8 @@
-if SHIELD_CIRQUE40
+if SHIELD_VOID16
 
 # Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "cirque40"
+    default "void16"
 
 # Cirque Glidepoint trackpad
 config ZMK_POINTING
