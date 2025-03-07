@@ -1,3 +1,4 @@
+
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "cirque40-layouts.dtsi"
 #include <dt-bindings/zmk/input_transform.h>
@@ -16,9 +17,9 @@
                 main role: For nice!nano, configure P0.11 as SPI clock, P0.22 as SPI MOSI, P0.08 as SPI MISO 
                            For Xiao NRF, default pins are: P1.13 as SPI Clock, P1.15 as SPI MOSI, P1.14 as SPI MISO
             */
-            psels = <NRF_PSEL(SPIM_SCK,  0, 10)>, // between D4 & D5 (SPIM_SCK,  0, 15) between D4 & D5 would be a high speed alternate pin for the xiao plus
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>, // D4
-                    <NRF_PSEL(SPIM_MISO, 0, 5)>; // D5
+            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>, // D8 (SPIM_SCK,  0, 15) between D4 & D5 would be a high speed alternate pin for the xiao plus
+                    <NRF_PSEL(SPIM_MOSI, 0, 04)>, // D4
+                    <NRF_PSEL(SPIM_MISO, 0, 05)>; // D5
         };
     };
 
@@ -26,9 +27,9 @@
     spi1_sleep: spi1_sleep {
         group1 {
             /* main role: configure P0.11 as SPI clock, P0.22 as SPI MOSI, P0.08 as SPI MISO */
-            psels = <NRF_PSEL(SPIM_SCK,  0, 10)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 5)>;
+            psels = <NRF_PSEL(SPIM_SCK,  1, 13)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 04)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 05)>;
             low-power-enable;
         };
     };
@@ -44,7 +45,7 @@
         reg = <0>;
         spi-max-frequency = <1000000>;
         status = "okay";
-        dr-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH)>; // D3
+        dr-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH)>; // between D4 & D5
 
         sensitivity = "1x";
         sleep;
@@ -66,21 +67,19 @@
         wakeup-source;
 
         col-gpios
-            = <&gpio0  2 GPIO_ACTIVE_HIGH>  // column 0 > D0
-            , <&gpio0  3 GPIO_ACTIVE_HIGH>  // column 1 > D1
-            , <&gpio0 28 GPIO_ACTIVE_HIGH>  // column 2 > D2
-            , <&gpio1 13 GPIO_ACTIVE_HIGH>  // column 3 > D8
-            , <&gpio1 11 GPIO_ACTIVE_HIGH>  // column 4 > D6
+            = <&gpio0 02 GPIO_ACTIVE_HIGH>  // column 0
+            , <&gpio0 03 GPIO_ACTIVE_HIGH>  // column 1
+            , <&gpio0 28 GPIO_ACTIVE_HIGH>  // column 2
+            , <&gpio0 29 GPIO_ACTIVE_HIGH>  // column 3
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>  // column 4
             
 // I mirrored the arrangement for the future possibility of pcb's for each half being flipped
 
-            , <&gpio1  5 GPIO_ACTIVE_HIGH>  // column 5 > 
-            , <&gpio1  3 GPIO_ACTIVE_HIGH>  // column 6 > 
-            , <&gpio1 12 GPIO_ACTIVE_HIGH>  // column 7 > D7
-            , <&gpio1 14 GPIO_ACTIVE_HIGH>  // column 8 > D9
-            , <&gpio1 15 GPIO_ACTIVE_HIGH>  // column 9 > D10 
-
-            
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>  // column 9
+            , <&gpio1 14 GPIO_ACTIVE_HIGH>  // column 8
+            , <&gpio1 12 GPIO_ACTIVE_HIGH>  // column 7 
+            , <&gpio1 03 GPIO_ACTIVE_HIGH>  // column 6
+            , <&gpio1 05 GPIO_ACTIVE_HIGH>  // column 5
             ;             
 
         row-gpios
