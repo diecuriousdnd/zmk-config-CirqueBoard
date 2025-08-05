@@ -5,7 +5,7 @@ note: I'm using keycodes like N1 instead of KP_N1 so I can get the shifted chara
 LMB, RMB = Left Mouse Button, Right Mouse Button
 T/L1 = TAB when tapped, Layer 1 when held = "&lt 1 TAB" I think?
 S/L2 = SPACE when tapped, Layer 2 when held = "&lt 2 SPACE" I think?
-ps = LWIN + PSCRN = "LG(PSCRN)" I think?
+ps = LWIN + PSCRN = "LG(PSCRN)" I think? 
 
 to do: add DEL
 
